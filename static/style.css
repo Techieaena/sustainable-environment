@@ -1,0 +1,112 @@
+/* Reset default margins and use full height */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f2f4f8;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;   /* 👈 changed from center to start */
+  padding-top: 40px;     /* 👈 keeps space from top */
+}
+
+/* The layered form container */
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  margin-bottom: 40px;   /* 👈 adds bottom space for scrolling if needed */
+}
+
+/* Make it adapt well on smaller screens */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1 {
+  text-align: center;
+  color: #1986df;
+  margin-bottom: 18px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 500;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+form textarea {
+  height: 120px;
+  resize: vertical;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  appearance: none;           /* Removes default dropdown arrow (optional) */
+  -webkit-appearance: none;   /* For Safari */
+  -moz-appearance: none;      /* For Firefox */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%22292%22%20height%3D%22292%22%20viewBox%3D%220%200%20292%20292%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4L166.6%20189.8c-6.2%206.2-16.4%206.2-22.6%200L5%2069.4c-6.2-6.2-6.2-16.4%200-22.6s16.4-6.2%2022.6%200L146%20144.6%20264.4%2046.8c6.2-6.2%2016.4-6.2%2022.6%200%206.2%206.2%206.2%2016.4%200%2022.6z%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  background-color: #005eb8;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004a92;
+}
+

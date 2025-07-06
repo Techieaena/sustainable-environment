@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <form name="contactForm" method="POST" onsubmit="return handleFormSubmit();">
+      <h2>Contact Us</h2>
+      <p>Please fill out the form below to get in touch with us.</p>
+
+      <label for="firstname">First Name*</label>
+      <input type="text" name="firstname" id="firstname" required>
+
+      <label for="lastname">Last Name*</label>
+      <input type="text" name="lastname" id="lastname" required>
+
+      <label for="email">Email*</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="phone">Phone*</label>
+      <input type="text" name="phone" id="phone" maxlength="10" required>
+
+      <label for="company">Company*</label>
+      <input type="text" name="company" id="company" required>
+
+      <label for="zip">Zip or Postal Code*</label>
+      <input type="text" name="zip" id="zip" required>
+
+      <label for="country">Country*</label>
+      <select name="country" id="country" required>
+        <option value="">Select</option>
+        <option value="India">India</option>
+        <option value="US">United States</option>
+        <option value="UK">United Kingdom</option>
+      </select>
+
+      <label for="purpose">Purpose of Enquiry*</label>
+      <select name="purpose" id="purpose" required>
+        <option value="">Select</option>
+        <option value="Support">Support</option>
+        <option value="Sales">Sales</option>
+        <option value="Feedback">Feedback</option>
+      </select>
+
+      <label for="referral">How did you hear about us?</label>
+      <input type="text" name="referral" id="referral">
+
+      <label for="comments">Comments</label>
+      <textarea name="comments" id="comments"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+<script>
+  function handleFormSubmit() {
+    const submitBtn = document.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    return true; // allow form to proceed
+  }
+</script>
+
+</body>
+</html>

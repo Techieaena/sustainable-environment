@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7M9CKL3FP0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7M9CKL3FP0', { 'debug_mode': true });  // Enable debug view
+  </script>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .thankyou-container {
+      padding: 20px;
+    }
+
+    .thankyou-image {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <script>
+  gtag('event', 'form_submission', {
+    event_category: 'Contact',
+    event_label: 'Contact Form Submitted',
+    value: 1
+  });
+</script>
+  <div class="thankyou-container">
+    <img src="{{ url_for('static', filename='Thankyou.png') }}" alt="Thank You" class="thankyou-image">
+  </div>
+</body>
+</html>
+<!--       return true; // Allow form submission
+ -->

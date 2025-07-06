@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Full Web Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Top navigation */
+    .top-nav {
+      color: #000;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      position: static;
+      top: 0;
+      z-index: 999;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .top-nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Header Section */
+    header {
+      background: url('static/header.jpg') center/cover no-repeat;
+      color: white;
+      padding: 120px 40px 60px;
+      position: relative;
+    }
+
+    .header-content {
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .header-content h1 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .header-content p.subtitle {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* === Anchor Bar Styles === */
+    .universalanchorbar {
+      background: #f5f5f5;
+      border-top: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+    }
+
+    .universalanchorbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .universalanchorbar-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .universalanchorbar-pagetitle {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .universalanchorbar-pagetitle-link {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .universalanchorbar-anchors-nav {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .universalanchorbar-anchors {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .universalanchorbar-anchors-listitem-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .universalanchorbar-anchors-listitem-link:hover {
+      color: #0cca3c;
+    }
+
+    .universalanchorbar-button {
+      background: #0cca3c;
+      color: #000070;
+      padding: 10px 18px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .universalanchorbar-button:hover {
+      background: #4bd46d;
+    }
+
+    /* Layout Sections */
+    .image-text {
+      max-width: 80%;
+      display: flex;
+      align-items: center;
+    }
+
+    .image-text>div {
+      flex: 1 1 50%;
+    }
+
+    .image-text img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      flex: 1 1 40%;
+    }
+
+    .promo-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .two-column-rich {
+      display: flex;
+      flex-direction: initial;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .two-column-rich>div {
+      width: 100%;
+    }
+
+    .two-column-rich img {
+      display: block;
+      margin: 20px auto 0;
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .promo-bar-alt {
+      background: #f3f3f3;
+      padding: 20px 40px;
+      border-top: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .promo-left-img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .promo-text {
+      max-width: 950px;
+    }
+
+    .promo-text h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .promo-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .grey-section {
+      background: #e0e0e0;
+      border-bottom: 2px solid #bbb;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Image Centering */
+    .image-center {
+      display: block;
+      margin: 20px auto 0;
+      max-width: 50%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .contact-btn {
+      background: #32c858;
+      color: #000070;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+
+      .universalanchorbar-container,
+      .section,
+      .top-nav,
+      .grey-section {
+        padding: 20px;
+      }
+
+      header {
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .image-text,
+      .promo-container,
+      .two-column-rich {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .promo-left-img {
+        margin: 0 auto;
+      }
+
+      .form-container form {
+        width: 100%;
+      }
+
+      .promo-text h2 {
+        font-size: 20px;
+      }
+
+      .promo-text p {
+        font-size: 14px;
+      }
+
+      .image-text img,
+      .two-column-rich img {
+        width: 100%;
+      }
+
+      .image-center {
+        display: block;
+        margin: 20px auto 0;
+        max-width: 80%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+
+    .image-content {
+      display: flex;
+      gap: 20px;
+      padding: 20px 40px;
+      align-items: center;
+      max-width: 1200px;
+    }
+
+    .image-content img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .image-content>div {
+      flex: 1 1 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Navigation -->
+  <div class="top-nav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="header-content">
+      <h1>Sustainable Environment</h1>
+      <p class="subtitle">Preserving Nature for Future Generations</p>
+    </div>
+  </header>
+
+  <!-- Custom Anchor Bar -->
+  <section class="universalanchorbar anchorbarscroll openblue" aria-label="OpenBlue Services">
+    <div class="universalanchorbar-container container">
+      <div class="universalanchorbar-header">
+        <h2 class="universalanchorbar-pagetitle">
+          <a class="universalanchorbar-pagetitle-link" href="#">
+            Sustainable Environment
+          </a>
+        </h2>
+      </div>
+
+      <nav class="universalanchorbar-anchors-nav" role="navigation" aria-label="AnchorBarNavigation">
+        <ul class="universalanchorbar-anchors">
+          <li class="universalanchorbar-anchors-listitem">
+            <a class="universalanchorbar-anchors-listitem-link" href="#Overview">Overview</a>
+          </li>
+          <li class="universalanchorbar-anchors-listitem">
+            <a class="universalanchorbar-anchors-listitem-link" href="#Solutionsandservices">Solutions and Services</a>
+          </li>
+          <li class="universalanchorbar-anchors-listitem">
+            <a class="universalanchorbar-anchors-listitem-link" href="#InsightsandInnovation">Insights & Innovation</a>
+          </li>
+        </ul>
+        <div class="universalanchorbar-anchors-overflow">
+          <ul class="universalanchorbar-anchors-overflow-links"></ul>
+        </div>
+      </nav>
+
+      <!-- Modal Dialog -->
+      <div class="modal" id="contactModal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <iframe id="contactFrame" src="/form" width="100%" height="450px" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Us Button -->
+      <button class="universalanchorbar-button" onclick="openModal()">Contact Us</button>
+    </div>
+  </section>
+
+
+  <!-- Grey Intro Section -->
+  <section class="section grey-section" id="about">
+    <p> A sustainable environment ensures that natural resources are used responsibly, protecting ecosystems while
+      supporting human well-being. From clean air to renewable energy, it’s all about balance and long-term impact.</p>
+  </section>
+
+  <section class="section image-content">
+    <img src="{{ url_for('static', filename='image 2.jpg') }}" alt="Protecting Forests">
+    <div>
+      <h2>Protecting Forests</h2>
+      <p>
+        Forests are vital for regulating climate and supporting biodiversity.<br />
+        Conservation efforts, tree planting, and preventing illegal logging<br />
+        are key to protecting our green cover.
+      </p>
+    </div>
+  </section>
+
+  <section class="section image-text">
+    <div>
+      <h2>Clean Energy Solutions</h2>
+      <p> Transitioning to renewable energy like solar and wind reduces<br /> carbon footprints. Sustainable energy not
+        only fights climate<br /> change but also brings energy access to remote areas.</p>
+    </div>
+    <img src="{{ url_for('static', filename='image 3.webp') }}" alt="Image 3">
+  </section>
+
+  <section class="promo-bar-alt">
+    <div class="promo-container">
+      <img src="{{ url_for('static', filename='promo-image.webp') }}" alt="Sustainability Icon" class="promo-left-img">
+      <div class="promo-text">
+        <h2>Optimize Environmental Impact</h2>
+        <p>
+          We help you improve your resource usage, reduce emissions, and contribute to a sustainable future. Our digital
+          insights and nature-first strategies are designed to help organizations meet environmental goals while
+          enhancing efficiency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation & Tech Section -->
+  <section class="section two-column-rich">
+    <div>
+      <h3>Empowering Green Communities</h3>
+      <p>
+        Sustainable development thrives when communities are actively engaged. By educating individuals, supporting
+        local green
+        initiatives, and creating eco-conscious urban designs, we ensure environmental awareness grows at the grassroots
+        level.
+      </p>
+      <p>
+        Collaborative action is at the heart of a green society — from urban farms to zero-waste programs, every small
+        effort counts.
+      </p>
+    </div>
+
+    <div>
+      <h3>Nature and Technology in Harmony</h3>
+      <p>
+        Integrating technology with environmental care leads to smarter ecosystems. Tools like drone mapping, AI-based
+        waste
+        management, and data-driven conservation help bridge the gap between innovation and natural preservation.
+      </p>
+      <p>
+        Our goal is to make technology work for the planet, not against it — ensuring growth is both intelligent and
+        inclusive.
+      </p>
+    </div>
+  </section>
+
+  <!-- Centered bottom image -->
+  <section class="image-center">
+    <img src="{{ url_for('static', filename='image 5.avif') }}" alt="Sustainable Future">
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <p>Follow us on <a href="#" style="color: #007bff;">Social Media</a></p>
+  </footer>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script>
+    const contactFrame = document.getElementById("contactFrame");
+
+    if (contactFrame) {
+      contactFrame.addEventListener("load", () => {
+        try {
+          const iframePath = contactFrame.contentWindow.location.pathname;
+
+          if (iframePath === "/thankyou") {
+            // Optional delay to let user see thank-you page
+            setTimeout(() => {
+              closeModal();
+            }, 3000); // 3 seconds
+          }
+        } catch (error) {
+          console.warn("Could not access iframe path (possibly cross-origin):", error);
+        }
+      });
+    } else {
+      console.error("Iframe not found!");
+    }
+  </script>
+
+</body>
+
+</html>
